@@ -1,4 +1,6 @@
 class TodotasksController < ApplicationController
+  before_action :authenticate
+
   def index
     @todos = Todotask.all
   end
