@@ -8,7 +8,7 @@ class TodotasksController < ApplicationController
   def new
     @todo = Todotask.new
   end
-
+  
   def create
     current_user.todos.create(todo_params)
     redirect_to todotasks_path

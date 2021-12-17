@@ -1,3 +1,7 @@
 class Todotask < ApplicationRecord
-  belongs_to :user
+
+  def completed?
+    #completed_at? comes from ActiveRecord - checks if nil or not
+    completed_at?
+  end
 end
