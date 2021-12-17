@@ -5,6 +5,6 @@ feature "user sees own todos" do
     Todotask.create(title: "Buy milk", email: "person@example.com")
 
     sign_in_as "someone_else@email.com"
-    expect(page).not_to have_css ".todos li", text: "Buy milk"
+    expect(page).not_to display_todo "Buy milk"
   end
 end
