@@ -24,4 +24,13 @@ describe Todotask, "#complete!" do
   end
 end
 
+describe Todotask, "#mark_incomplete!" do
+  it "sets completed_at to nil" do
+    todo = Todotask.create!(completed_at: Time.current)
+    todo.mark_incomplete!
+    #binding.pry
+    expect(todo).not_to be_completed
+  end
+end
+
 end

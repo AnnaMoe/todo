@@ -9,4 +9,9 @@ class Todotask < ApplicationRecord
     # touch is ActiveRecord method, creates timestamp and persists record in db
     touch :completed_at
   end
+
+  def mark_incomplete!
+    update_column :completed_at, nil
+  end
+
 end
