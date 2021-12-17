@@ -4,4 +4,9 @@ class Todotask < ApplicationRecord
     #completed_at? comes from ActiveRecord - checks if nil or not
     completed_at?
   end
+
+  def complete!
+    # touch is ActiveRecord method, creates timestamp and persists record in db
+    touch :completed_at
+  end
 end

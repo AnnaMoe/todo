@@ -1,7 +1,7 @@
 class CompletionsController < ApplicationController
   def create
     # .touch looks at timestamp, sets it to the current time & persists the record
-    todo.touch :completed_at
+    todo.complete!
     redirect_to todotasks_path
   end
 
