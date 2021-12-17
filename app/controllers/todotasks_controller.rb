@@ -2,7 +2,7 @@ class TodotasksController < ApplicationController
   before_action :authenticate
 
   def index
-    @todos = Todotask.where(email: session[:current_email])
+    @todos = current_user.todos
   end
 
   def new
@@ -10,7 +10,7 @@ class TodotasksController < ApplicationController
   end
 
   def create
-    Todotask.create(todo_params.merge(email: current_email))
+    current_user.todos.create(todo_params)
     redirect_to todotasks_path
   end
 
