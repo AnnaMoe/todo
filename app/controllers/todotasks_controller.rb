@@ -10,7 +10,7 @@ class TodotasksController < ApplicationController
   end
 
   def create
-    Todotask.create(todo_params.merge(email: session[:current_email]))
+    Todotask.create(todo_params.merge(email: current_email))
     redirect_to todotasks_path
   end
 
